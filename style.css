@@ -12,7 +12,11 @@ body {
     color:aliceblue;
 }
 
-
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
 
 .header-box {
     text-align: center;
@@ -101,7 +105,10 @@ body {
     background-color: #000;
     text-align: center;
     font-size: 15px;
+    color: #fff;       
+    margin-top: auto;  
 }
+
 
 .about-text-1 {
     color: #FFF;
@@ -116,74 +123,79 @@ body {
     letter-spacing: 0.4px;
 }
 
-/* GALLERY LAYOUT */
+/* GALLERY */
 .gallery {
     column-count: 2;
     column-gap: 40px;
     padding: 30px 0;
 }
 
-.gallery img {
+.gallery .thumb {
     width: 100%;
-    margin-bottom: 40px;
     display: block;
-    break-inside: avoid;
+    margin-bottom: 40px;
     cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.gallery img:hover {
+.gallery .thumb:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* Responsive behavior */
-@media (max-width: 1000px) {
-    .gallery { column-count: 2; }
-}
+/* LIGHTBOX */
 
-@media (max-width: 600px) {
-    .gallery { column-count: 1; }
-}
-
-/* LIGHTBOX OVERLAY */
 .lightbox {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* center the box */
-    background: rgba(0,0,0,0.85);     /* darkened background */
-    padding: 10px 20px;               /* space around the image */
-    border-radius: 8px;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7); 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;               
+    box-sizing: border-box;
 }
 
-/* Show lightbox when targeted */
 .lightbox:target {
-    display: block;
+    display: flex;
 }
 
 /* Image inside lightbox */
 .lightbox-img {
-    display: block;
-    border-radius: 8px;
-
-    width: auto;   /* natural width */
-    height: auto;  /* natural height */
+    width: auto;                 
+    height: auto;                
+    width: 500px;
+    height: auto;            
+    border-radius: 0;            
+    box-shadow: 0 0 30px rgba(0,0,0,0.7); 
 }
 
-/* Close button */
+
+
+/* CLOSE BUTTON */
 .close {
     position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 24px;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
     font-weight: bold;
     color: white;
     text-decoration: none;
     cursor: pointer;
+    z-index: 1001;
 }
+
+.lightbox { display: none; }
+.lightbox:target { display: flex; }
+
+
+/* Responsive gallery */
+@media (max-width: 1000px) { .gallery { column-count: 2; } }
+@media (max-width: 600px)  { .gallery { column-count: 1; } }
+
 
 
 
