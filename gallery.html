@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Hobileht | Galerii</title>
 </head>
@@ -13,10 +14,25 @@
         <section class="nav-box">
             <a href="home.html">Avaleht</a>
             <a href="about.html">Minust</a>
-            <a href="gallery.html">Galerii</a>
+            <a href="gallery.html" class="active">Galerii</a>
         </section>
     </header>
-    
+
+
+<!-- Mobile Sidebar -->
+<input type="checkbox" id="sidebar-toggle">
+<label for="sidebar-toggle" class="menu-icon">☰</label>
+
+<div class="mobile-sidebar">
+  <label for="sidebar-toggle" class="close-btn">×</label>
+  <nav class="nav-box">
+    <a href="home.html" class="active">Avaleht</a>
+    <a href="about.html">Minust</a>
+    <a href="gallery.html">Galerii</a>
+  </nav>
+</div>
+
+
     <section class="home-content">
 
     <div class="gallery">
@@ -29,27 +45,27 @@
 
     <!-- LIGHTBOX OVERLAYS -->
     <div id="img1" class="lightbox">
-        <a href="#" class="close">&times;</a>
+        <a href="#" class="lightbox-bg"></a>
         <img src="images/man.png" class="lightbox-img">
     </div>
 
     <div id="img2" class="lightbox">
-        <a href="#" class="close">&times;</a>
+        <a href="#" class="lightbox-bg"></a>
         <img src="images/man.png" class="lightbox-img">
     </div>
 
     <div id="img3" class="lightbox">
-        <a href="#" class="close">&times;</a>
+        <a href="#" class="lightbox-bg"></a>
         <img src="images/man.png" class="lightbox-img">
     </div>
 
     <div id="img4" class="lightbox">
-        <a href="#" class="close">&times;</a>
+        <a href="#" class="lightbox-bg"></a>
         <img src="images/man.png" class="lightbox-img">
     </div>
 
     <div id="img5" class="lightbox">
-        <a href="#" class="close">&times;</a>
+        <a href="#" class="lightbox-bg"></a>
         <img src="images/man.png" class="lightbox-img">
     </div>
 
@@ -58,7 +74,7 @@
 
         <div class="divider">
             <p class="quote">“An artist cannot fail; it is a success to be one.”</p>
-            <p class="quote-author">John Updike</p>
+            <p class="quote-author">Charles Horton Cooley</p>
         </div>
       
 

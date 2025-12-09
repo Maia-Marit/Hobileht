@@ -2,7 +2,12 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overscroll-behavior: none;
 }
+
+/* Start https://www.cursors-4u.com */
+
+* {cursor: url(https://ani.cursors-4u.net/others/oth-9/oth870.ani), url(https://ani.cursors-4u.net/others/oth-9/oth870.png), auto !important;} /* End https://www.cursors-4u.com */
 
 body {
     background-color: #5B20B3;
@@ -29,11 +34,22 @@ body {
 }
 
 .nav-box a {
-    color: aliceblue;
+    color: aliceblue;            
     text-decoration: none;
     margin: 15px;
     font-size: 17px;
+    transition: color 0.3s;      
 }
+
+.nav-box a:hover {
+    color: #ffea00;              
+}
+
+.nav-box a.active {
+    color: #ffea00;              
+    font-weight: bold;
+}
+
 
 .home-content {
     display: flex;
@@ -173,6 +189,20 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.7); 
 }
 
+.lightbox-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+}
+
+.lightbox-img {
+    position: relative;
+    z-index: 2;
+}
 
 
 /* CLOSE BUTTON */
@@ -180,12 +210,13 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 32px;
+    font-size: 50px;
     font-weight: bold;
     color: white;
     text-decoration: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 20px;
 }
 
 .lightbox { display: none; }
@@ -195,6 +226,132 @@ body {
 /* Responsive gallery */
 @media (max-width: 1000px) { .gallery { column-count: 2; } }
 @media (max-width: 600px)  { .gallery { column-count: 1; } }
+
+
+/* Hide the checkbox */
+#sidebar-toggle {
+  display: none;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 480px) {
+
+  /* Hide desktop nav */
+  .header-box {
+    display: none !important;
+  }
+
+  /* Hamburger menu icon */
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;   /* default size */
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  /* Hide hamburger when sidebar is open */
+  #sidebar-toggle:checked + .menu-icon {
+    display: none;
+  }
+
+  /* Sidebar hidden by default */
+  .mobile-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: black;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1001;
+  }
+
+  /* Show sidebar when checkbox is checked */
+  #sidebar-toggle:checked ~ .mobile-sidebar {
+    display: flex;
+  }
+
+  /* Close button inside sidebar */
+  .mobile-sidebar .close-btn {
+    align-self: flex-end;
+    font-size: 50px;  /* bigger X */
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  /* Sidebar nav links */
+  .mobile-sidebar .nav-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mobile-sidebar .nav-box a {
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .mobile-sidebar .nav-box a.active {
+    font-weight: bold;
+    color: #ffea00;
+  }
+
+  /*HOME PAGE*/
+  .home-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    margin-top: 100px;     
+    gap: 20px;              /* spacing between image and text */
+    padding: 20px;          
+  }
+
+  .home-img {
+    width: 80%;             /* responsive width */
+    max-width: 300px;       /* prevent too large on mobile */
+    height: auto;
+  }
+
+  .home-wrapper {
+    max-width: 300px;       /* keep text readable */
+  }
+
+  .home-text-1 {
+    font-size: 22px;        /* slightly smaller for mobile */
+  }
+
+  .home-text-2 {
+    font-size: 16px;
+  }
+}
+
+/* Hide mobile sidebar and hamburger on desktop */
+@media (min-width: 481px) {
+  .menu-icon,
+  .mobile-sidebar {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 

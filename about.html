@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Hobileht | Minust</title>
 </head>
@@ -12,11 +13,26 @@
         <img src="images/logo.PNG" alt="Logo" class="logo-img">
         <section class="nav-box">
             <a href="home.html">Avaleht</a>
-            <a href="about.html">Minust</a>
+            <a href="about.html" class="active">Minust</a>
             <a href="gallery.html">Galerii</a>
         </section>
     </header>
-    
+
+  
+   <!-- Mobile Sidebar -->
+<input type="checkbox" id="sidebar-toggle">
+<label for="sidebar-toggle" class="menu-icon">☰</label>
+
+<div class="mobile-sidebar">
+  <label for="sidebar-toggle" class="close-btn">×</label>
+  <nav class="nav-box">
+    <a href="home.html" class="active">Avaleht</a>
+    <a href="about.html">Minust</a>
+    <a href="gallery.html">Galerii</a>
+  </nav>
+</div>
+
+
     <section class="home-content">
     <img src="images/man.png" alt="mees" class="home-img">
     
@@ -29,7 +45,7 @@
 
         <div class="divider">
             <p class="quote">“The artist does not see things as they are, but as he is.”</p>
-            <p class="quote-author">John Updike</p>
+            <p class="quote-author">Alfred Tonnelle</p>
         </div>
       
 
