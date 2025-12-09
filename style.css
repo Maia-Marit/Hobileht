@@ -228,7 +228,6 @@ body {
 @media (max-width: 600px)  { .gallery { column-count: 1; } }
 
 
-/* Hide the checkbox */
 #sidebar-toggle {
   display: none;
 }
@@ -280,10 +279,13 @@ body {
   /* Close button inside sidebar */
   .mobile-sidebar .close-btn {
     align-self: flex-end;
-    font-size: 50px;  /* bigger X */
+    font-size: 50px; 
+    top: 20px;
+    right: 20px; 
     color: white;
     cursor: pointer;
     margin-bottom: 20px;
+    padding: 10px;
   }
 
   /* Sidebar nav links */
@@ -295,9 +297,11 @@ body {
 
   .mobile-sidebar .nav-box a {
     margin: 10px 0;
-    font-size: 16px;
     color: white;
     text-decoration: none;
+    text-align: center;
+    font-size: 20px; 
+    color: white;
     text-align: center;
   }
 
@@ -306,6 +310,19 @@ body {
     color: #ffea00;
   }
 
+  .mobile-sidebar .mobile-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.mobile-sidebar .mobile-logo img {
+  width: 40px;    /* Adjust size */
+  height: auto;
+}
+
+
   /*HOME PAGE*/
   .home-content {
     display: flex;
@@ -313,22 +330,22 @@ body {
     align-items: center;    
     text-align: center;
     margin-top: 100px;     
-    gap: 20px;              /* spacing between image and text */
+    gap: 20px;              
     padding: 20px;          
   }
 
   .home-img {
-    width: 80%;             /* responsive width */
-    max-width: 300px;       /* prevent too large on mobile */
+    width: 80%;             
+    max-width: 300px;       
     height: auto;
   }
 
   .home-wrapper {
-    max-width: 300px;       /* keep text readable */
+    max-width: 300px;       
   }
 
   .home-text-1 {
-    font-size: 22px;        /* slightly smaller for mobile */
+    font-size: 22px;        
   }
 
   .home-text-2 {
